@@ -23,22 +23,22 @@ Se realizaron 39 encuestas las cuelaes nos ayudaron a ver si formarian parte de 
 tan seguido comian fuera de casa, la mayoria fueron mujeres, y la mayoria asiste a la escuela, lo cual es 
 más facil que coman fuera de casa y tan seguido.
 ​
-![edad](img-readme/edad.png)
+![edad](./src/Imagenes/edad.png)
 ​
 El 33.3% de los usuarios se encuentran entre los 21-30 de edad.
 ​
-![genero](img-readme/genero.png)
+![genero](./src/Imagenes/genero.png)
 ​
 El 84.6% de los usuarios son mujeres miestras que el 10.3% son hombres
 ​
-![fuera](img-readme/fuera.png)
+![fuera](./src/Imagenes/fuera.png)
 ​
 El 66.7% de los usarios comen de 1 a 3 veces por semana fuera de sus casas.
 ​
-![red](img-readme/red.png)
+![red](./src/Imagenes/red.png)
 El 51.3% de los usuarios les interesaria formar parte de una red social para amantes de la comida
 ​
-![ocupación](img-readme/ocupación.png)
+![ocupación](./src/Imagenes/ocupación.png)
 ​
 El 28.2% de nuestros usuarios son estudiantes por lo cual no les da tiempo de comer en casa o
 preparse algo de comida para llevar.
@@ -46,7 +46,7 @@ preparse algo de comida para llevar.
 ​
 ## User persona
 ​
-[user](img-readme/user.jpg)
+[user](./src/Imagenes/user.jpg)
 ​
 ​
 ## Historia de usuario
@@ -62,9 +62,11 @@ la pagina web debera deja que consulte los lugares que más se han frecuentado d
 Al ingresar a la pagína me dejara hacer que yo pueda guardar mis lugares favoritos
 Y consultar si hay eventos próximos, relacionados con la comida.
 ​
-## prototipo de alta fidelidad
+
+## Prototipo de baja fidelidad
+
+[Marvel](https://marvelapp.com/42ie94h/screen/59883665)
+
+## Prototipo de alta fidelidad
 ​
-![inicio](img-readme/inicio.png)
-![segunda](img-readme/segunda.png)
-![tercera](img-readme/tercera.png)
-![Formulario](img-readme/Formulario.png)
+[Figma](https://www.figma.com/proto/6NuxSKHA0Lz8jx2jBcDAUJ/FoodLova?node-id=2%3A10&scaling=scale-down)

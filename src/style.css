@@ -6,7 +6,8 @@
 .intro,
 .log-in,
 .sign-in,
-.welcome{
+.welcome,
+.formulario{
     background-image: url(./Imagenes/Fondo.png);
     background-repeat: repeat-x;
 }
@@ -23,7 +24,8 @@
     background: rgba(101, 166, 3, 0.8);
 }
 .log-in .logo img,
-.sign-in .header .logo{
+.sign-in .header .logo,
+.formulario .caja-imagen img{
     width: 10rem;
 }
 .intro .intro-text{
@@ -192,15 +194,18 @@
        line-height: 39px;
        text-align: center;
        color: #000000;
+       background: white;
     }
     .button-go{
        position: relative;
-    width: 153px;
-    height: 51px;
-    /* left: 107px;
-    top: 518px; */
-    background: rgba(217, 4, 22, 0.8);
-    border-radius: 16px;
+        width: 153px;
+        height: 51px;
+        /* left: 107px;
+        top: 518px; */
+        background: rgba(217, 4, 22);
+        border-radius: 16px;
+        color: white;
+        font-size: 18pt;
     }
     /* MODALES */
     .box-logo{
@@ -339,47 +344,47 @@
     color: #000000;
     }
     /*formulario*/
-    .imagen{
+    .formulario{
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
         width: 100%;
         background: url(./Imagenes/Fondo.png);
-        position: absolute;
+        /*position: absolute;*/
         margin: auto;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
     }
-    ​
-    .imagen .caja-imagen {
+    ​.formulario .imagen,
+    .formulario .usuario,
+    .formulario .correo,
+    .formulario .contraseña,
+    .formulario .confirma{
+        background: rgba(101, 166, 3, 0.8);
+    }
+    .formulario .caja-imagen {
         flex-direction: column;
         align-items: center;
     }
-    ​
-    .imagen .caja-imagen img {
-        width: 100px;
-        height: 100px;
-    }  
-    ​
-    .imagen .usuario{
+    .formulario .usuario{
         width: 120px;
        
     }
-    .imagen .correo{
+    .formulario .correo{
         width: 120px;
     }
     ​
-    .imagen .contraseña{
+    .formulario .contraseña{
         width: 120px;
     }
     ​
-    .imagen .confirma{
+    .formulario .confirma{
         width: 120px;
     }
-    .imagen .confirma .btn {
+    .formulario .confirma button{
         white-space: 120px;
         background-color:#65A603;
         height: 50px; 
