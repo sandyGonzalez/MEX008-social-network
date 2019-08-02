@@ -7,7 +7,7 @@
 .log-in,
 .sign-in,
 .welcome{
-    background-image: url(/src/Imagenes/Fondo.png);
+    background-image: url(./Imagenes/Fondo.png);
     background-repeat: repeat-x;
 }
 .intro .logo,
@@ -345,7 +345,7 @@
         justify-content: space-evenly;
         align-items: center;
         width: 100%;
-        background: url(/src/Imagenes/Fondo.png);
+        background: url(./Imagenes/Fondo.png);
         position: absolute;
         margin: auto;
         top: 0;
