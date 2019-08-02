@@ -7,6 +7,23 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Mitr&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/4f820322b0.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase.js"></script>
+  <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDZaNmRtlEnDMsa_tuR9iapQoZ8vTUxhNA",
+        authDomain: "foodlova-be05e.firebaseapp.com",
+        databaseURL: "https://foodlova-be05e.firebaseio.com",
+        projectId: "foodlova-be05e",
+        appId: "1:934548153482:web:6638cc8f9ee278fa"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    
+      //Make auth and firestore references
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+    </script>
   <title>Food Lova</title>
 </head>
 <body>
@@ -80,27 +97,7 @@
       <button>Listo</button>
     </div>
   </main>
-    <!--PAGINA DE BIENVENIDA DESPUES DE CREAR CUENTA-->
- <section class="welcome">
-    <!--Sección para el texto de bienvenida-->
-    <section class="welcome-text">
-      <h2>
-        Bienvenid@ a
-      </h2>
-    </section>
-    <!-- Sección para el logo -->
-    <figure class="logo">
-      <img src="./Imagenes/foodlova.png" alt="logo-foodLova">
-    </figure>
-    <!-- Seccion para el texto -->
-    <section class="welcome-description-text">
-      <p>
-        Donde todos somos glotones y lo presumimos
-      </p>
-      <!-- Sección para el boton vamos -->
-    </section>
-    <button class="button-go">Vamos!</button>
-  </section>
+    
   <!-- MODAL FACEBOOK -->
   <section class="modal-facebook">
     <section class="logo-Modal-facebook">
@@ -158,31 +155,56 @@
         </section>
     </section>
   </section>
+
   <!--Formulario-->
-  <main class="imagen">
-    <div >
+
+  <main class="formulario">
+    <div class="imagen">
       <figure class="caja-imagen">
-        <img src="./Imagenes/Logo_verde.png" alt="Logo.png" style="width: 250px; height: 250px;">
+        <img src="./Imagenes/Logo_verde.png" alt="Logo.png" >
       </figure>
     </div>
     <div class="usuario">
-       <label for="usuario">Nombre de usuario</label>
+       <label for="usuario">Nombre de usuario</label><br>
        <input id="Nombre" name="Usuario" class="text">
     </div>
     <div class="correo">
-       <label for="correo">Correo Electronico</label>
+       <label for="correo">Correo Electronico</label><br>
        <input id="correo" name="electronico" class="text">
     </div>
     <div class="contraseña">
-       <label for="contraseña">contraseña</label>
+       <label for="contraseña">contraseña</label><br>
        <input id="contraseña" name="contraseña" class="text">
     </div>
     <div class="confirma">
-       <label for="confirma">Confirma tu contraseña</label>
+       <label for="confirma">Confirma tu contraseña</label><br>
        <input id="confirma-contraseña" name="confirma" class="text">
        <button class="btn" id="btnlado">Siguiente</button>
     </div>
   </main>
+
+  <!--PAGINA DE BIENVENIDA DESPUES DE CREAR CUENTA-->
+
+ <section class="welcome">
+    <!--Sección para el texto de bienvenida-->
+    <section class="welcome-text">
+      <h2>
+        Bienvenid@ a
+      </h2>
+    </section>
+    <!-- Sección para el logo -->
+    <figure class="logo">
+      <img src="./Imagenes/foodlova.png" alt="logo-foodLova">
+    </figure>
+    <!-- Seccion para el texto -->
+    <section class="welcome-description-text">
+      <p>
+        Donde todos somos glotones y lo presumimos
+      </p>
+      <!-- Sección para el boton vamos -->
+    </section>
+    <button class="button-go">Vamos!</button>
+  </section>
       
      
     
@@ -191,32 +213,10 @@
 ​ 
    
   
-  
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#config-web-app -->
 
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyDZaNmRtlEnDMsa_tuR9iapQoZ8vTUxhNA",
-    authDomain: "foodlova-be05e.firebaseapp.com",
-    databaseURL: "https://foodlova-be05e.firebaseio.com",
-    projectId: "foodlova-be05e",
-    appId: "1:934548153482:web:6638cc8f9ee278fa"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
 
-  //Make auth and firestore references
-  const auth = firebase.auth();
-  const db = firebase.firestore();
-</script>
-<script src="index.js"></script>
+  <script src="index.js"></script>
   <script type="module" src="main.js"></script>
 </body>
 </html>
