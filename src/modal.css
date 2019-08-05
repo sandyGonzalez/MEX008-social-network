@@ -1,104 +1,147 @@
-*{
-    padding: 0;
+
+h1{
+    color:white;
+    padding: 1em;
+
+
+}
+#show-modal{
+    text-align: center;
+    background: #bc651a;
+    padding: 15px 15px;
+    color: white;
+    font-weight: 500;
+    font-size: 1.5em;
+    border-radius: 3.5px;
+    text-decoration: none;
+    transition: all 0.15s linear;
+}
+#show-modal: hover{
+    cursor: pointer;
+    background: #bc9d1a;
+
+
+
+}
+.modal{
+    position: fixed;
+    top:  -100vh;
+    left: 0;
+    z-index:  99999999;
+    background: rgba(0,0,0,0.75);
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+
+
+
+}
+
+.modal .content-modal{
+    width: 100%;
+    max-width: 500px;
+    position: fixed;
+    left: 50%;
+    top: -100vh;
+    transition: top 0.35s ease;
+    margin-left: -250px;
+    background: white;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    border-radius: 2px;
+    z-index: 99999999;
+
+
+}
+.modal h2{
+    padding: 0.5em;
+    text-align: center;
+    color: #444444;
     margin: 0;
 }
-
-
-/* PANTALLA DE BIENVENIDA */
-.welcome-text h2{
-    
-position: relative;
-width: 1em ;
-height: 1em;
-/* left: 29px;
-top: 30px; */
-display: block;
-
-font-family: Mitr;
-font-style: normal;
-font-weight: normal;
-font-size: 50px;
-line-height: 78px;
-text-align: center;
-
-color: #000000;
+.modal article{
+    height: 100%;
+    background: white;
 
 }
-.logo img{
+.close-modal{
+    color: #e74c3c;
     position: relative;
+    top: 0.2em;
+    right: 0.37em;
+    margin: 0;
+    padding:5px;
+    font-weight: bold;
+    text-decoration: none,
+}
+.mmodal a:hover{
+    color: #c0392b;
+
+}
+.modal:target{
+    opacity: 1;
+    top: 0;
+}
+
+.modal .btn-close-modal{
+    position: absolute;
+    left: 0;
     width: 100%;
     height: 100%;
- /*    left: 102px;
-    top: 207px */;
-    
-    
-
+    z-index: 99999991;
 }
 
-
-.welcome{
-    display: block;
-    
-}
-
-.welcome-description-text p{
-
-    position: relative;
-    width: 270px;
-    height: 166px;
-    /* left: 53px;
-    top: 371px;
-     */
-    font-family: Mitr;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 25px;
-    line-height: 39px;
-    text-align: center;
-    
-    color: #000000;
-    
-    
+.modal:target .content-modal{
+    top: 50px;
+    transition: top 0.35s ease;
 
 }
+@media(max-width. 796px){
+    .modal .content-modal{
+        width: 90%;
+        max-width: none;
+        left: 5%;
+        margin-left: 0;
+    }
 
-.button-go{
-    position: relative;
-width: 153px;
-height: 51px;
-/* left: 107px;
-top: 518px; */
-
-background: rgba(217, 4, 22, 0.8);
-border-radius: 16px;
-
+    .modal ul{
+        padding: 0
+    }
 }
+
+/* MODALES GOOGLE  FACEBOOK */
 
 /* MODALES */
 .box-logo{
     position: relative;
-width: 1em;
-height: 1em;
-/* left: 1px;
-top: 6px; */
+    width: 100%;
+    height: 100%;
+    left: 1px;
+    top: 6px;
+    padding-top: 3%;
+    background: rgba(217, 4, 22, 0.8);
 
-background: rgba(217, 4, 22, 0.8);
+
 
 }
 
 .box-logo .logo img{
-    position: relative;
-    width: 1em;
-    height: 1em;
-    /* left: 102px;
-    top: 207px;
+    
+
+        position: relative;
+        width: 50%;
+        /* height: 1em;
+        left: 102px;
+        top: 207px;
      */
+    
+   
 
 }
 .box-logo .row-images{
     position: relative;
-width: 1em;
-height: 1em;
+    width: 100%;
+    height: 100%;
 /* left: 302px;
 top: 169px; */
 
@@ -115,7 +158,7 @@ border: 1px solid #000000;
 box-sizing: border-box;
 border-radius: 16px;
 
-.modal-google .
+
 
 /* DISEÑO DEL MODAL */
 h1{
@@ -172,14 +215,14 @@ h1{
 
 
 }
-modal h2{
+.modal h2{
     padding: 0.5em;
     text-align: center;
     color: #444444;
     margin: 0;
 }
 .modal article{
-    height: 300px;
+    height: 100%;
     background: #bc651a;
     display: flex;
 
@@ -240,8 +283,8 @@ modal h2{
 }
 .form-facebook p{
     position: relative;
-width: 271px;
-height: 60px;
+width: 100%;
+height: 100%;
 /* left: 43px;
 top: 235px; */
 
@@ -311,9 +354,32 @@ border-radius: 16px;
 
 
 .box-login-google{
-    display: block
+    display: flex;
 
 }
+section .box-logo{
+
+    padding: 100%;
+    margin: 100%;
+
+
+}
+.form-google{
+
+    display: block;
+    padding: 100%;
+    margin:100;
+
+}
+.row-images{
+
+
+
+}
+
+
+
+
 .form-google p{
     position: relative;
 width: 271px;
@@ -354,8 +420,7 @@ color: #000000;
     position: relative;
 width: 163px;
 height: 38px;
-/* left: 97px;
-top: 435px; */
+
 
 font-family: Mitr;
 font-style: normal;
