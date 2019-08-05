@@ -26,6 +26,7 @@
     </script>
   <title>Food Lova</title>
 </head>
+
 <body>
   <!-- Intro -->
   <main class="intro">
@@ -41,7 +42,9 @@
       <button>Inicia sesión</button>
     </div>
   </main>
+
   <!-- Log In-->
+
   <main class="log-in">
     <div class="logo">
       <img src="./Imagenes/foodlova.png" alt="logo">
@@ -60,7 +63,9 @@
       <img src="./Imagenes/logo_google.png" alt="logo google">
     </div>
   </main>
+
   <!--Sign In-->
+
   <main class="sign-in">
     <div class="header">
       <img class="logo" src="./Imagenes/foodlova.png" alt="logo">
@@ -76,7 +81,9 @@
         <i class="fas fa-arrow-left"></i>
     </div>
   </main>
+
   <!--User Info-->
+
   <main class="user-info">
     <div class="user-info-header">
       <img src="./Imagenes/fila_imgs.png" alt="imgs comida">
@@ -99,6 +106,7 @@
   </main>
     
   <!-- MODAL FACEBOOK -->
+
   <section class="modal-facebook">
     <section class="logo-Modal-facebook">
       <section class="box-logo">
@@ -160,26 +168,20 @@
 
   <main class="formulario">
     <div class="imagen">
-      <figure class="caja-imagen">
-        <img src="./Imagenes/Logo_verde.png" alt="Logo.png" >
-      </figure>
+      <img src="./Imagenes/Logo_verde.png" alt="Logo.png">
     </div>
-    <div class="usuario">
-       <label for="usuario">Nombre de usuario</label><br>
-       <input id="Nombre" name="Usuario" class="text">
+    <div class="form">
+       <label for="username">Nombre de usuario</label><br>
+       <input type="text" id="username" name="Usuario" class="text"><br>
+       <label for="email">Correo Electronico</label><br>
+       <input type= "email" id="email" name="electronico" class="text"><br>
+       <label for="password">contraseña</label><br>
+       <input type="password" id="create-password" name="contraseña" class="text"><br>
+       <label for="confirm">Confirma tu contraseña</label><br>
+       <input type="password" id="confirm-password" name="confirma" class="text"><br>
     </div>
-    <div class="correo">
-       <label for="correo">Correo Electronico</label><br>
-       <input id="correo" name="electronico" class="text">
-    </div>
-    <div class="contraseña">
-       <label for="contraseña">contraseña</label><br>
-       <input id="contraseña" name="contraseña" class="text">
-    </div>
-    <div class="confirma">
-       <label for="confirma">Confirma tu contraseña</label><br>
-       <input id="confirma-contraseña" name="confirma" class="text">
-       <button class="btn" id="btnlado">Siguiente</button>
+    <div class="form-btn">
+       <button id="confirm-signup">Siguiente</button>
     </div>
   </main>
 
@@ -189,7 +191,7 @@
     <!--Sección para el texto de bienvenida-->
     <section class="welcome-text">
       <h2>
-        Bienvenid@ a
+        Bienvenid@ <br> a
       </h2>
     </section>
     <!-- Sección para el logo -->
@@ -203,7 +205,9 @@
       </p>
       <!-- Sección para el boton vamos -->
     </section>
-    <button class="button-go">Vamos!</button>
+    <div class="button-go">
+      <button >Vamos!</button>
+    </div>
   </section>
       
      
