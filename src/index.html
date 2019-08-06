@@ -4,27 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css?family=Mitr&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/4f820322b0.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase.js"></script>
-  <script>
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
-        apiKey: "AIzaSyDZaNmRtlEnDMsa_tuR9iapQoZ8vTUxhNA",
-        authDomain: "foodlova-be05e.firebaseapp.com",
-        databaseURL: "https://foodlova-be05e.firebaseio.com",
-        projectId: "foodlova-be05e",
-        appId: "1:934548153482:web:6638cc8f9ee278fa"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-    
-      //Make auth and firestore references
-      const auth = firebase.auth();
-      const db = firebase.firestore();
-    </script>
-  <title>Food Lova</title>
+  <link rel="stylesheet" href="style.css" >
+  <title>FoodLova</title>
 </head>
 
 <body>
@@ -105,64 +86,99 @@
     </div>
   </main>
     
-  <!-- MODAL FACEBOOK -->
+  <!-- MODAL GOOGLE -->
+  <h1>ventana modal</h1>
+  <a href="#modal" id="show-modal">Abrir con Google</a>
 
-  <section class="modal-facebook">
-    <section class="logo-Modal-facebook">
-      <section class="box-logo">
-        <figure class="logo">
-            <img src="./Imagenes/foodlova.png" alt="logo-foodLova">
-          </figure>
-      <section class="row-images">
-        <img src="./Imagenes/fila_imgs.png" alt="incon-files">
-        </section>
-      </section>
-      <!-- Caja para formulario Facebook -->
-      <section class="box-login-facebook">
-        <section class="form-facebook">
-        <p>
-          Crear cuenta con facebook
-        </p>
-        <form action="">
-          <p class="email-facebook">Correo: </p>
-          <input type="email" class="input-modals" required />
-          <p class="password-facebook">Contraseña: </p>
-          <input type="password"  id="input-modals" required />
-          <figure>
-              <i class="far fa-window-close"></i>
-              <i class="far fa-check-square"></i>
-          </figure>
-        </form>
-      </section>
-    </section>
-    <!-- MODAL GOOGLE -->
-    <section class="modal-google">
-        <section class="box-logo">
-        <figure class="logo">
-            <img src="./Imagenes/foodlova.png" alt="logo-foodLova" class="Logo">
-          </figure>
-      <section class="row-images">
-        <img src="./Imagenes/fila_imgs.png" alt="incon-files">
-        </section>
-        </section>
-        <section class="box-login-google">
-        <section class="form-google">
-        <p>
-            Crear cuenta con Google
-          </p>
-          <form action="" class=".form-google">
-            <p class="email-modal-google">Correo: </p>
-            <input type="text" class="input-modals">
-            <p class="password-modal-google">Contraseña: </p>
-            <input type="text" name="" id="input-modals">
-            <figure>
-              <i class="far fa-window-close"></i>
-              <i class="far fa-check-square"></i>
-              </figure> 
-          </form>
-        </section>
-    </section>
-  </section>
+  <aside id="modal" class="modal">
+      <div class="content-modal">
+          
+         <article>
+              <section class="modal-google">
+                      <section class="box-logo">
+                      <figure class="logo">
+                          <img src="img/foodlova.png" alt="logo-foodLova" class="logo"> 
+                        </figure>
+                    <section class="row-images">
+                      <img src="img/fila_imgs.png" alt="incon-files">
+                      </section>
+                      </section>
+                      <section class="box-login-google">
+                      <section class="form-google">
+                      <p>
+                        
+                          Crear cuenta con Google
+                        </p>
+                        <form action="" class=".form-google">
+                          <p class="email-modal-google">Correo: </p>
+                          <input type="text" class="input-modals">
+                          <p class="password-modal-google">Contraseña: </p>
+                          <input type="text" name="" id="input-modals">
+                          <figure>
+                              <a href="#" class="close-modal">Atras </a>
+                            <a href="#" class="close-modal">Siguiente</a>
+              
+                          </figure>
+                        </form>
+                      </section>
+                  </section>
+              
+                </section>
+
+
+         </article>
+
+      </div>
+      <a href="#" class="btn-close-modal"></a>
+
+  </aside>
+
+<!--   MODAL PARA FACEBOOK -->
+
+  <h1>ventana modal</h1>
+  <a href="#modal2" class="show-modal">Abrir con Facebook</a>
+
+  <aside id="modal2" class="modal">
+      <div class="content-modal">
+          
+         <article>
+              <section class="modal-google">
+                      <section class="box-logo">
+                      <figure class="logo">
+                          <img src="img/foodlova.png" alt="logo-foodLova" class="logo"> 
+                        </figure>
+                    <section class="row-images">
+                      <img src="img/fila_imgs.png" alt="incon-files">
+                      </section>
+                      </section>
+                      <section class="box-login-google">
+                      <section class="form-facebook">
+                      <p>
+                        Crear cuenta con Facebook
+                        </p>
+                        <form action="" class=".form-google">
+                          <p class="email-modal-google">Correo: </p>
+                          <input type="text" class="input-modals">
+                          <p class="password-modal-google">Contraseña: </p>
+                          <input type="text" name="" id="input-modals">
+                          <figure>
+                              <a href="#" class="close-modal">Atras </a>
+                            <a href="#" class="close-modal">Siguiente</a>
+              
+                          </figure>
+                        </form>
+                      </section>
+                  </section>
+              
+                </section>
+
+
+         </article>
+
+      </div>
+      <a href="#" class="btn-close-modal"></a>
+
+  </aside>
 
   <!--Formulario-->
 
@@ -222,5 +238,106 @@
 
   <script src="index.js"></script>
   <script type="module" src="main.js"></script>
+  <!--PAGINA DE BIENVENIDA DESPUES DE CREAR CUENTA-->
+  <section class="welcome">
+    <!--Sección para el texto de bienvenida-->
+    <section class="welcome-text">
+      <h2> 
+        Bienvenid@ a
+      </h2>
+    </section>
+    <!-- Sección para el logo --> 
+    <figure class="logo">
+      <img src="img/foodlova.png" alt="logo-foodLova">
+    </figure>
+    <!-- Seccion para el texto -->
+    <section class="welcome-description-text">
+      <p>
+        Donde todos somos glotones y lo presumimos
+      </p>
+      <!-- Sección para el boton vamos -->
+    </section>
+    <button class="button-go">Vamos!</button>
+  </section>
+
+  <!-- MODAL FACEBOOK -->
+  <section class="modal-facebook">
+    <section class="logo-Modal-facebook">
+      <section class="box-logo">
+        <figure class="logo">
+            <img src="img/foodlova.png" alt="logo-foodLova">
+          </figure>
+      <section class="row-images">
+        <img src="img/fila_imgs.png" alt="incon-files">
+        </section>
+      </section>
+      <!-- Caja para formulario Facebook -->
+      <section class="box-login-facebook">
+        <section class="form-facebook">
+        
+        <p>
+          Crear cuenta con facebook
+        </p>
+        <form action="">
+          <p class="email-facebook">Correo: </p>
+          <input type="text" class="input-modals">
+          <p class="password-facebook">Contraseña: </p>
+          <input type="text" name="" id="input-modals">
+          <figure>
+            <img src="" alt="imagen-atras">
+            <img src="" alt="imagen-siguiente">
+          </figure>
+        </form>
+      </section>
+    </section>
+    <!-- MODAL GOOGLE -->
+    <h1>ventana modal</h1>
+    <a href="#modal" id="show-modal">Abrir Ventana</a>
+
+    <aside id="modal" class="modal">
+        <div class="content-modal">
+            <header>
+                <a href="#" class="close-modal">X</a>
+                <h2>Buen Trabajo!</h2>
+
+            </header>
+           <article>
+                <section class="modal-google">
+                        <section class="box-logo">
+                        <figure class="logo">
+                            <img src="img/foodlova.png" alt="logo-foodLova" class="logo"> 
+                          </figure>
+                      <section class="row-images">
+                        <img src="img/fila_imgs.png" alt="incon-files">
+                        </section>
+                        </section>
+                        <section class="box-login-google">
+                        <section class="form-google">
+                        <p>
+                          
+                            Crear cuenta con Google
+                          </p>
+                          <form action="" class=".form-google">
+                            <p class="email-modal-google">Correo: </p>
+                            <input type="text" class="input-modals">
+                            <p class="password-modal-google">Contraseña: </p>
+                            <input type="text" name="" id="input-modals">
+                            <figure>
+                              <img src="" alt="imagen-atras">
+                              <img src="" alt="imagen-siguiente">
+                            </figure>
+                          </form>
+                        </section>
+                    </section>
+                
+                  </section>
+
+
+           </article>
+
+        </div>
+        <a href="#" class="btn-close-modal"></a>
+
+    </aside>    
 </body>
 </html>
