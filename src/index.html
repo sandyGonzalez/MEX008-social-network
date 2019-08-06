@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="style.css" >
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Mitr&display=swap" rel="stylesheet">
   <title>FoodLova</title>
 </head>
 
@@ -190,7 +191,7 @@
        <label for="username">Nombre de usuario</label><br>
        <input type="text" id="username" name="Usuario" class="text"><br>
        <label for="email">Correo Electronico</label><br>
-       <input type= "email" id="email" name="electronico" class="text"><br>
+       <input type= "email" id="signup-email" name="electronico" class="text"><br>
        <label for="password">contraseña</label><br>
        <input type="password" id="create-password" name="contraseña" class="text"><br>
        <label for="confirm">Confirma tu contraseña</label><br>
@@ -235,7 +236,24 @@
   
 
 
-
+<script src="https://kit.fontawesome.com/4f820322b0.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.3.4/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-auth.js"></script>
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDZaNmRtlEnDMsa_tuR9iapQoZ8vTUxhNA",
+      authDomain: "foodlova-be05e.firebaseapp.com",
+      databaseURL: "https://foodlova-be05e.firebaseio.com",
+      projectId: "foodlova-be05e",
+      appId: "1:934548153482:web:6638cc8f9ee278fa"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  
+    //Make auth and firestore references
+  
+  </script>
   <script src="index.js"></script>
   <script type="module" src="main.js"></script>
   <!--PAGINA DE BIENVENIDA DESPUES DE CREAR CUENTA-->
