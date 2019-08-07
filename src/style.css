@@ -333,3 +333,20 @@
         font-size: 14pt;
         
     }
+    .nav-timeline{
+       background: rgba(101, 166, 3, 0.8);
+
+    }
+    .nav-timeline img{
+        padding: 0;
+        border:0;
+        margin:0;
+        width: 15%;
+        height: 15%;
+    }
+    .nearby-places .opinions-button{
+        background:#D97904; 
+        font-family: 'Mitr', sans-serif;
+        border-radius: 16px;
+        padding: 1%;
+    }
