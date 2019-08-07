@@ -106,7 +106,7 @@ user.sendEmailVerification()
 //     projectId: "foodlova-be05e"
 //   });
   
-  var db = firebase.firestore();
+let db = firebase.firestore();
 
   db.collection("users").add({
     first: "Vero",
@@ -119,3 +119,17 @@ user.sendEmailVerification()
 .catch(function(error) {
     console.error("Error adding document: ", error);
 });
+
+
+export default {
+    db,
+    singUp,
+    logInBtn,
+    logOffBtn,
+    register,
+    logIn,
+    observe,
+    write,
+    logOff,
+    verify,
+}
