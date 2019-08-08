@@ -40,6 +40,11 @@ window.firebaseFunction = {
         let logInEmail = document.getElementById("login-email").value;
         let logInPassword = document.getElementById("login-password").value;
         firebase.auth().signInWithEmailAndPassword(logInEmail, logInPassword)
+        .then(() =>{
+            location.hash= "#/timeline"
+
+
+        })
             .catch(function (error) {
                 // Handle Errors here.
                 let errorCode = error.code;

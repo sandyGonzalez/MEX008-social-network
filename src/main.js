@@ -17,6 +17,7 @@ import signin from './modules/signIn.js';
 import userform from './modules/userForm.js';
 import userinfo from './modules/userInfo.js';
 import welcome from './modules/welcome.js';
+import timeline from './modules/timeline.js';
 import location from './modules/location.js';
 
 import Error404 from './modules/error.js';
@@ -32,6 +33,7 @@ const routes = {
     '/userform': userform,
     '/userinfo': userinfo,
     '/welcome': welcome,
+    '/timeline': timeline,
     '/location': location,
     '/error': Error404
 };
