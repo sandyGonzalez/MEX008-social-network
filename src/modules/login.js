@@ -15,17 +15,21 @@ render : async () => {
   </div>
   <div class="log-in-btns">
     <p>O</p>
-    <img src="./Imagenes/logo_fb.png" alt="logo fb">
-    <img src="./Imagenes/logo_google.png" alt="logo google">
+    <img id="facebook-login" src="./Imagenes/logo_fb.png" alt="logo fb">
+    <img id="google-login" src="./Imagenes/logo_google.png" alt="logo google">
   </div>
 </main>
   `
   return view
-}
-, after_render: async () => {
+},
+ after_render: async () => {
   const logInBtn = document.getElementById("login-btn");
+  const googleLogin = document.getElementById("google-login");
+  const facebookLogin = document.getElementById("facebook-login");
   logInBtn.addEventListener("click", () => window.firebaseFunction.functionLogin());
   () => window.firebaseFunction.observe();
+  googleLogin.addEventListener("click", () => window.firebaseFunction.loginGoogle());
+  facebookLogin.addEventListener("click", () => window.firebaseFunction.loginFacebook());
 }
 }
 export default logIn;
