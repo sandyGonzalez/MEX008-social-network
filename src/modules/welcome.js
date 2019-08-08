@@ -11,12 +11,18 @@ let welcome = {
       <section class="welcome-description-text">
         <p>Donde todos somos glotones y lo presumimos</p>
       </section>
-      <button class="button-go">Vamos!</button>
+      <button id = "button-go"class="button-go">Vamos!</button>
     </section>
       `
       return view
   },
-  after_render : async () => {}
+  after_render : async () => {
+    const buttonGo =document.getElementById("button-go");
+    buttonGo.addEventListener("click",()=>location.hash= "#/timeline");
+
+
+
+  }
 }
 
 export default welcome;
