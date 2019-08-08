@@ -1,11 +1,32 @@
 window.firebaseFunction = {
     register: () => {
         // console.log("diste un click");
+        let userName = document.getElementById("username").value
         let email = document.getElementById("signup-email").value;
         let password = document.getElementById("create-password").value;
+        let confirmPassword = document.getElementById("confirm-password").value
+        if(userName === ''){
+            alert('Te falta escribir tu nombre');
+            return;
+        }
+        if(email.length < 4){
+            alert('Tu correo no es valido');
+            return;
+        }
+        if(password.length < 6){
+            alert('Tu contraseña debe tener 6 caracteres por lo menos');
+            return;
+        }
+        if(password !== confirmPassword){
+            alert('la contraseña no es la misma');
+            return;
+        }
+        //PENDIENTE TERMINOS Y CONDICIONES
+        
         firebase.auth().createUserWithEmailAndPassword(email, password)
             .then(() => {
                 window.firebaseFunction.verify();
+                location.hash = "#/userinfo"// solo despues de registrarte correctamente nos redirige a la siguiente pagina.
             })
             .catch(function (error) {
                 // Handle Errors here.

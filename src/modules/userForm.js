@@ -17,7 +17,7 @@ let userform = {
              <input type="password" id="confirm-password" name="confirma" class="text"><br>
           </div>
           <div class="form-btn">
-          <a id ="confirm-signup" href = "./#/userInfo">Siguiente</a>
+          <button id= "confirm-signup">Siguiente</button>
           </div>
         </main>`;
       
@@ -25,12 +25,15 @@ let userform = {
   }
   , after_render: async () => {
    const signUp = document.getElementById("confirm-signup");
+
   
    signUp.addEventListener("click", () => window.firebaseFunction.register());
     window.firebaseFunction.observe();
   }
 }
 export default userform;
+
+
 
 //
 
