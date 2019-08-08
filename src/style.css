@@ -3,6 +3,10 @@
     padding: 0;
     font-family: 'Mitr', sans-serif;
 }
+a{
+    text-decoration: none;
+    text-decoration-color: #000000;
+}
 .intro,
 .log-in,
 .sign-in,
@@ -24,6 +28,13 @@
 .formulario .form,
 .formulario .form-btn{
     background: rgba(101, 166, 3, 0.8);
+}
+
+.formulario .form-btn a{
+    background-color: rgba(101, 166, 3);
+    border-radius: 16px;
+    padding: 7px 25px;
+
 }
 .intro .logo img,
 .log-in .logo img,
@@ -128,6 +139,13 @@
     font-family: 'Mitr', sans-serif;
     font-size: 27pt;
     text-align: center;
+    color: black;
+}
+.sign-in .sign-in-options a{
+    text-decoration: none;
+}
+.sign-in .sign-in-options a img{
+    width: 5rem;
 }
 .sign-in .sign-in-options button,
 .user-info .user-info-footer button{
@@ -143,6 +161,14 @@
 }
 .sign-in .sign-in-options button img{
     width: 3rem;
+}
+.sign-in .modal-imgs{
+    margin: 15px auto;
+}
+.sign-in .sign-in-options .modal-options p,
+.sign-in .sign-in-options .modal-options a{
+    font-size: 14pt;
+    padding-bottom: 10px;
 }
 .sign-in .sign-in-footer,
 .user-info .user-info-footer i{
@@ -203,6 +229,39 @@
 
     }
     /* MODALES */
+    .modal{
+        /*display: none;*/
+        position: fixed;
+        z-index: 1; 
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%; 
+        overflow: auto; 
+        background-color: rgba(0,0,0,0.4);
+    }
+    .modal .modal-content{
+        background-color: whitesmoke;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 70%;
+    }
+    .modal .modal-content .close{
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .modal .modal-content .close:hover,
+    .modal .modal-content .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    /*.modales{
+        display: block;
+    }
     .box-logo{
        position: relative;
     width: 360px;
@@ -227,7 +286,7 @@
     border-radius: 16px;
     }
        /* MODAL FACEBOOK */
-    .box-login-facebook{
+    /*.box-login-facebook{
        display: block
     }
     .form-facebook p{
@@ -275,7 +334,7 @@
     border-radius: 16px;
     }
     /* MODAL GOOGLE */
-    .box-login-google{
+    /*.box-login-google{
        display: block
     }
     .form-google p{
@@ -313,7 +372,7 @@
     line-height: 41px;
     text-align: center;
     color: #000000;
-    }
+    }*/
     /*formulario*/
    
     .formulario .form label{

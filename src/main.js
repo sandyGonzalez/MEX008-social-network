@@ -5,98 +5,125 @@
 // myFunction();
 
 const signUp = document.getElementById("confirm-signup");
-const logInBtn = document.getElementById("login-btn");
+
 const logOffBtn = document.getElementById("log-off");
+"use strict";
 
-const register = () =>  
-{
-    // console.log("diste un click");
-    let email = document.getElementById("signup-email").value;
-    let password = document.getElementById("create-password").value;
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then(() => {
-        verify();
-    })
-    .catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(errorCode);
-        console.log(errorMessage);
-      }); 
+// import Navbar from './modules/navbar.js'
+
+import intro     from './modules/intro.js';
+import login from './modules/login.js';
+import signin from './modules/signIn.js';
+import userform from './modules/userForm.js';
+import userinfo from './modules/userInfo.js';
+import welcome from './modules/welcome.js';
+import location from './modules/location.js';
+
+import Error404 from './modules/error.js';
+
+import Utils from './modules/utils.js';
+
+// List of supported routes. 
+// Any url other than these routes will throw a 404 error
+const routes = {
+    "/": intro,
+    '/login' : login,
+    '/signin': signin,
+    '/userform': userform,
+    '/userinfo': userinfo,
+    '/welcome': welcome,
+    '/location': location,
+    '/error': Error404
 };
-signUp.addEventListener("click", register);
 
-const logIn = () =>{
-    let logInEmail = document.getElementById("login-email").value;
-    let logInPassword = document.getElementById("login-password").value;
-firebase.auth().signInWithEmailAndPassword(logInEmail, logInPassword)
-.catch(function(error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // ...
-    console.log(errorCode);
-        console.log(errorMessage);
-  });
-};
-logInBtn.addEventListener("click", logIn);
+// Router takes a URL, checks against the list of supported routes and then renders the corresponding content page
+const router = async () => { // function always returns a promise
 
-const observe = () => {
-firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-        write(user);
-        console.log("existe usuario activo");
-      // User is signed in.
-      var displayName = user.displayName;
-      var email = user.email;
-      console.log(user.emailVerified)
-      var emailVerified = user.emailVerified;
-      var photoURL = user.photoURL;
-      var isAnonymous = user.isAnonymous;
-      var uid = user.uid;
-      var providerData = user.providerData;
-      // ...
-    } else {
-      // User is signed out.
-      console.log("no existe usuario activo");
-      // ...
-    }
-  });
-}
-observe();
-
-const write = (user) => {
-    // let user1 = user; 
-    let content = document.getElementById ("content");
-    if(user.emailVerified){
-        content.innerHTML = "Login exitoso";
-    }
+    // load view element
+    // const header  = document.getElementById('header-container'); 
+    const content = null || document.getElementById('content'); // If the first value is false, it checks the second value 
     
+    // Render the header of the page
+    // header.innerHTML = await Navbar.render(); // wait till the promise resolves
+    // await Navbar.after_render();
+    
+    // Get the page from the hash of supported routes.
+    let request = Utils.parseRequestURL();
+    // Parse the URL and if it has an id part, change it with the string ":id"
+    // condition ? exprIfTrue : exprIfFalse 
+    let parsedURL = (request.resource ? '/' + request.resource : '/') 
+        + (request.id ? '/:id' : '') 
+        + (request.verb ? '/' + request.verb : '');
+        //console.log(parsedURL);
+    // Get the page from our hash of supported routes.
+    // If the parsed URL is not in our list of supported routes, select the 404 page instead
+    // console.log(parsedURL);
+    
+    let page = routes[parsedURL] ? routes[parsedURL] : Error404; 
+    // console.log(page);
+    content.innerHTML = await page.render();
+    await page.after_render();    
 }
+
+// Listen on hash change:
+window.addEventListener('hashchange', router); // The event occurs when there has been changes to the anchor part of a URL
+// Listen on page load:
+window.addEventListener('load', router); // The event occurs when an object has loaded
+
+//Codigo de Firebase
+
+
+
+
+
+
+
+// const observe = () => {
+// firebase.auth().onAuthStateChanged(function(user) {
+//     if (user) {
+//         write(user);
+//         console.log("existe usuario activo");
+//       // User is signed in.
+//       let displayName = user.displayName;
+//       let email = user.email;
+//       let emailVerified = user.emailVerified;
+//       console.log(user.emailVerified);
+//       let photoURL = user.photoURL;
+//       let isAnonymous = user.isAnonymous;
+//       let uid = user.uid;
+//       let providerData = user.providerData;
+//       // ...
+//     } else {
+//       // User is signed out.
+//       console.log("no existe usuario activo");
+//       let provider = firebase.auth.GoogleAuthProvider();
+//       firebase.auth().signInWithRedirect(provider);
+//       // ...
+//     }
+//   });
+// };
+// observe();
+
+// const write = (user) => {
+//     // let user1 = user; 
+//     let content = document.getElementById ("content");
+//     if(user.emailVerified){
+//         content.innerHTML = "Login exitoso";
+//     }
+// };
 
 const logOff = () => {
     firebase.auth().signOut()
     .then(()=> {
-console.log("saliendo...")
+console.log("saliendo...");
     })
     .catch((error) => {
-console.log(error)
-    })
-}
+console.log(error);
+    });
+};
 logOffBtn.addEventListener("click",logOff);
 
-const verify = () => {
-    let user = firebase.auth().currentUser;
-user.sendEmailVerification()
-.then(function() {
-    console.log("enviando correo...")
-  // Email sent.
-}).catch(function(error) {
-    console.log(error);
-  // An error happened.
-});
-}
+
 
 //Se inicializa Firestore
 
@@ -105,8 +132,7 @@ user.sendEmailVerification()
 //     authDomain: "foodlova-be05e.firebaseapp.com",
 //     projectId: "foodlova-be05e"
 //   });
-  
-  var db = firebase.firestore();
+let db = firebase.firestore();
 
   db.collection("users").add({
     first: "Vero",
@@ -119,3 +145,17 @@ user.sendEmailVerification()
 .catch(function(error) {
     console.error("Error adding document: ", error);
 });
+
+
+// export default {
+//     db,
+//     singUp,
+//     logInBtn,
+//     logOffBtn,
+//     register,
+//     functionLogin,
+//     observe,
+//     write,
+//     logOff,
+//     verify,
+// };
