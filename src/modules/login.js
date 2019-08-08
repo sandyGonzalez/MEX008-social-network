@@ -11,7 +11,7 @@ render : async () => {
     <input type="email" name="email" id="login-email"><br>
     <label for="password">Contraseña</label><br>
     <input type="password" name="password" id="login-password"><br>
-    <button onclick="functionLogin()" id="login-btn">Siguiente</button>
+    <button id="login-btn">Siguiente</button>
   </div>
   <div class="log-in-btns">
     <p>O</p>
@@ -22,6 +22,10 @@ render : async () => {
   `
   return view
 }
-, after_render: async () => {}
+, after_render: async () => {
+  const logInBtn = document.getElementById("login-btn");
+  logInBtn.addEventListener("click", () => window.firebaseFunction.functionLogin());
+  () => window.firebaseFunction.observe();
+}
 }
 export default logIn;

@@ -25,24 +25,9 @@ let userform = {
   }
   , after_render: async () => {
    const signUp = document.getElementById("confirm-signup");
-   const register = () =>
-   {
-       // console.log("diste un click");
-       let email = document.getElementById("signup-email").value;
-       let password = document.getElementById("create-password").value;
-       firebase.auth().createUserWithEmailAndPassword(email, password)
-       .then(() => {
-           verify();
-       })
-       .catch(function(error) {
-           // Handle Errors here.
-           var errorCode = error.code;
-           var errorMessage = error.message;
-           console.log(errorCode);
-           console.log(errorMessage);
-         });
-   };
-   signUp.addEventListener("click", register);
+  
+   signUp.addEventListener("click", () => window.firebaseFunction.register());
+    window.firebaseFunction.observe();
   }
 }
 export default userform;
