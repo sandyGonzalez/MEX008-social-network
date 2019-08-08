@@ -11,7 +11,7 @@ render : async () => {
     <input type="email" name="email" id="login-email"><br>
     <label for="password">Contraseña</label><br>
     <input type="password" name="password" id="login-password"><br>
-    <button id="login-btn">Siguiente</button>
+    <button onclick="functionLogin()" id="login-btn">Siguiente</button>
   </div>
   <div class="log-in-btns">
     <p>O</p>

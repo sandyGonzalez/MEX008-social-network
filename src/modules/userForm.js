@@ -17,14 +17,35 @@ let userform = {
              <input type="password" id="confirm-password" name="confirma" class="text"><br>
           </div>
           <div class="form-btn">
-             <a href = "./#/userInfo"> Siguiente</a>
+          <a id ="confirm-signup" href = "./#/userInfo">Siguiente</a>
           </div>
         </main>`;
       
       return view
   }
-  , after_render: async () => {}
+  , after_render: async () => {
+   const signUp = document.getElementById("confirm-signup");
+   const register = () =>
+   {
+       // console.log("diste un click");
+       let email = document.getElementById("signup-email").value;
+       let password = document.getElementById("create-password").value;
+       firebase.auth().createUserWithEmailAndPassword(email, password)
+       .then(() => {
+           verify();
+       })
+       .catch(function(error) {
+           // Handle Errors here.
+           var errorCode = error.code;
+           var errorMessage = error.message;
+           console.log(errorCode);
+           console.log(errorMessage);
+         });
+   };
+   signUp.addEventListener("click", register);
+  }
 }
 export default userform;
 
+//
 
