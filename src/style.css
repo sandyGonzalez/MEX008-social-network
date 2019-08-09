@@ -154,10 +154,7 @@ a{
     text-align: center;
     color: black;
 }
-.sign-in .sign-in-options a{
-    text-decoration: none;
-}
-.sign-in .sign-in-options a img{
+.sign-in .sign-in-options img{
     width: 5rem;
 }
 .sign-in .sign-in-options button,

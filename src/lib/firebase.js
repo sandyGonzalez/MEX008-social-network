@@ -23,7 +23,8 @@ window.firebaseFunction = {
         }
         //PENDIENTE TERMINOS Y CONDICIONES
         firebase.auth().createUserWithEmailAndPassword(email, password)
-            .then(() => {
+            .then((user) => {
+                // let usuario = user.
                 window.firebaseFunction.verify();
                 location.hash = "#/userinfo"// solo despues de registrarte correctamente nos redirige a la siguiente pagina.
             })
@@ -53,7 +54,7 @@ window.firebaseFunction = {
             })
             .catch(function (error) {
                 // Handle Errors here.
-                alert("Usuario y/o contraseña incorrectos")
+                alert("Usuario y/o contraseña incorrectos");
                 let errorCode = error.code;
                 let errorMessage = error.message;
                 // ...
@@ -69,8 +70,8 @@ window.firebaseFunction = {
                 console.log("existe usuario activo");
                 console.log(user);
               // User is signed in.
-                let displayName = user.displayName;
-                console.log(displayName);
+                // let displayName = user.displayName;
+                // console.log(displayName);
                 let email = user.email;
                 let emailVerified = user.emailVerified;
                 console.log(user.emailVerified);
