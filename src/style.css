@@ -7,6 +7,9 @@ a{
     text-decoration: none;
     text-decoration-color: #000000;
 }
+.content{
+    height: 640px;
+}
 .intro,
 .log-in,
 .sign-in,
@@ -14,6 +17,12 @@ a{
 .formulario{
     background-image: url(./Imagenes/Fondo.png);
     background-repeat: repeat-x;
+    height: 100%;
+}
+.user-info,
+.timeline,
+.location{
+    height: 100%;
 }
 .intro .logo,
 .log-in .logo,
@@ -69,7 +78,8 @@ a{
     text-align: center;
     padding: 20px 0px;
 }
-.intro .btns button{
+.intro .btns button,
+.welcome button{
     background: #D90416;
     border-radius: 16px;
     color: white;
@@ -77,6 +87,9 @@ a{
     font-family: 'Mitr', sans-serif;
     font-size: 18pt;
     padding: 7px 25px;
+}
+.intro .btns button:hover{
+    cursor: pointer;
 }
 .intro .btns p{
     color: white;
@@ -207,236 +220,231 @@ a{
     line-height: 78px;
     color: #000000;
     padding: 25px 10px;
+    
     }
-    .welcome{
-       display: block;
-    }
-    .welcome-description-text p{
-       font-size: 25px;
-       line-height: 39px;
-       color: #000000;
-       background: white;
-       padding: 25px 10px;
-    }
-    .welcome .button-go button{
-        background: #D90416;
-        border-radius: 16px;
-        color: white;
-        border: none;
-        font-size: 18pt;
-        padding: 7px 25px;
-        margin: 10px auto;
+.welcome{
+   display: block;
+}
+.welcome-description-text p{
+   font-size: 25px;
+   line-height: 39px;
+   color: #000000;
+   background: white;
+   padding: 25px 10px;
+}
+.welcome .button-go{
+    margin-left: 30%;
+}
+/* MODALES */
+.modal{
+    /*display: none;*/
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4);
+}
+.modal .modal-content{
+    background-color: whitesmoke;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 70%;
+}
+.modal .modal-content .close{
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.modal .modal-content .close:hover,
+.modal .modal-content .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/*.modales{
+    display: block;
+}
+.box-logo{
+   position: relative;
+width: 360px;
+height: 209px;
+background: rgba(217, 4, 22, 0.8);
+}
+.box-logo .logo img{
+   position: relative;
+   width: 10rem;
+}
+.box-logo .row-images{
+   position: relative;
+width: 35px;
+height: 35px;
+}
+.input-modal{
+   position: relative;
+width: 214px;
+height: 38px;
+border: 1px solid #000000;
+box-sizing: border-box;
+border-radius: 16px;
+}
+   /* MODAL FACEBOOK */
+/*.box-login-facebook{
+   display: block
+}
+.form-facebook p{
+   position: relative;
+width: 271px;
+height: 60px;
+font-family: Mitr;
+font-style: normal;
+font-weight: normal;
+font-size: 26px;
+line-height: 41px;
+text-align: center;
+color: #000000;
+}
+.email-facebook{
+   position: relative;
+width: 128px;
+height: 38px;
+font-family: Mitr;
+font-style: normal;
+font-weight: normal;
+font-size: 26px;
+line-height: 41px;
+text-align: center;
+color: #000000;
+}
+.password-facebook{
+   position: relative;
+width: 163px;
+height: 38px;
+font-family: Mitr;
+font-style: normal;
+font-weight: normal;
+font-size: 26px;
+line-height: 41px;
+text-align: center;
+color: #000000;
+}
+.input-modals{
+   position: relative;
+width: 214px;
+height: 38px;
+border: 1px solid #000000;
+box-sizing: border-box;
+border-radius: 16px;
+}
+/* MODAL GOOGLE */
+/*.box-login-google{
+   display: block
+}
+.form-google p{
+   position: relative;
+width: 271px;
+height: 60px;
+font-family: Mitr;
+font-style: normal;
+font-weight: normal;
+font-size: 26px;
+line-height: 41px;
+text-align: center;
+color: #000000;
+}
+.email-modal-google{
+   position: relative;
+width: 128px;
+height: 38px;
+font-family: Mitr;
+font-style: normal;
+font-weight: normal;
+font-size: 26px;
+line-height: 41px;
+text-align: center;
+color: #000000;
+}
+.password-modal-google{
+   position: relative;
+width: 163px;
+height: 38px;
+font-family: Mitr;
+font-style: normal;
+font-weight: normal;
+font-size: 26px;
+line-height: 41px;
+text-align: center;
+color: #000000;
+}*/
+/*formulario*/
 
-    }
-    /* MODALES */
-    .modal{
-        /*display: none;*/
-        position: fixed;
-        z-index: 1; 
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%; 
-        overflow: auto; 
-        background-color: rgba(0,0,0,0.4);
-    }
-    .modal .modal-content{
-        background-color: whitesmoke;
-        margin: 15% auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 70%;
-    }
-    .modal .modal-content .close{
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-    }
-    .modal .modal-content .close:hover,
-    .modal .modal-content .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-    }
-    /*.modales{
-        display: block;
-    }
-    .box-logo{
-       position: relative;
-    width: 360px;
-    height: 209px;
-    background: rgba(217, 4, 22, 0.8);
-    }
-    .box-logo .logo img{
-       position: relative;
-       width: 10rem;
-    }
-    .box-logo .row-images{
-       position: relative;
-    width: 35px;
-    height: 35px;
-    }
-    .input-modal{
-       position: relative;
-    width: 214px;
-    height: 38px;
-    border: 1px solid #000000;
-    box-sizing: border-box;
+.formulario .form label{
+    font-size: 22pt;
+}
+.formulario .form input{
+    border-style: none;
     border-radius: 16px;
-    }
-       /* MODAL FACEBOOK */
-    /*.box-login-facebook{
-       display: block
-    }
-    .form-facebook p{
-       position: relative;
-    width: 271px;
-    height: 60px;
-    font-family: Mitr;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 26px;
-    line-height: 41px;
-    text-align: center;
-    color: #000000;
-    }
-    .email-facebook{
-       position: relative;
-    width: 128px;
-    height: 38px;
-    font-family: Mitr;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 26px;
-    line-height: 41px;
-    text-align: center;
-    color: #000000;
-    }
-    .password-facebook{
-       position: relative;
-    width: 163px;
-    height: 38px;
-    font-family: Mitr;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 26px;
-    line-height: 41px;
-    text-align: center;
-    color: #000000;
-    }
-    .input-modals{
-       position: relative;
-    width: 214px;
-    height: 38px;
-    border: 1px solid #000000;
-    box-sizing: border-box;
+    font-size: 20pt;
+}
+.formulario .form-btn button{
+    background: rgba(101, 166, 3);
+    border: none;
+    border-radius: 16pt;
+    color: white;
+    padding: 7px 25px;
+    font-size: 14pt;
+    
+}
+.nav-timeline{
+   background: rgba(101, 166, 3, 0.8);
+}
+.nav-timeline img{
+    padding: 0;
+    border:0;
+    margin:0;
+    width: 15%;
+    height: 15%;
+}
+.nearby-places .opinions-button{
+    background:#D97904; 
+    font-family: 'Mitr', sans-serif;
     border-radius: 16px;
-    }
-    /* MODAL GOOGLE */
-    /*.box-login-google{
-       display: block
-    }
-    .form-google p{
-       position: relative;
-    width: 271px;
-    height: 60px;
-    font-family: Mitr;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 26px;
-    line-height: 41px;
-    text-align: center;
-    color: #000000;
-    }
-    .email-modal-google{
-       position: relative;
-    width: 128px;
-    height: 38px;
-    font-family: Mitr;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 26px;
-    line-height: 41px;
-    text-align: center;
-    color: #000000;
-    }
-    .password-modal-google{
-       position: relative;
-    width: 163px;
-    height: 38px;
-    font-family: Mitr;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 26px;
-    line-height: 41px;
-    text-align: center;
-    color: #000000;
-    }*/
-    /*formulario*/
-   
-    .formulario .form label{
-        font-size: 22pt;
-    }
-    .formulario .form input{
-        border-style: none;
-        border-radius: 16px;
-        font-size: 20pt;
-    }
-    .formulario .form-btn button{
-        background: rgba(101, 166, 3);
-        border: none;
-        border-radius: 16pt;
-        color: white;
-        padding: 7px 25px;
-        font-size: 14pt;
-        
-    }
-    .nav-timeline{
-       background: rgba(101, 166, 3, 0.8);
-
-    }
-    .nav-timeline img{
-        padding: 0;
-        border:0;
-        margin:0;
-        width: 15%;
-        height: 15%;
-    }
-    .nearby-places .opinions-button{
-        background:#D97904; 
-        font-family: 'Mitr', sans-serif;
-        border-radius: 16px;
-        padding: 1%;
-    }
+    padding: 1%;
+}
 /*Timeline*/
 .nav{
     height:60px;
     background-color: #65A603;
 }
-.imagen{
+.timeline .nav .menu-izq .imagen,
+.timeline .nav .menu-der .imagen,
+.timeline .nav .cajas .imagen{
     width: 50px;
     height: 50px;
 }
-#menu-izq{
+.menu-izq{
     list-style-type: none;
     text-align: left;
     margin: 0;
     display: contents;
 }
-#menu-izq li{
+.menu-izq li{
     display: inline;
     text-align: left;
     margin: 0 10px 0 0;
 }
-#menu-der{
+.menu-der{
     list-style-type: none;
     text-align: right;
     margin: 0;
     display: block;
     float: right;
 }
-#menu-der li{
+.menu-der li{
     display: inline;
     text-align: right;
     margin: 0 10px 0 0;
@@ -451,13 +459,14 @@ a{
    
 }
 .cajas .imagen{
+    width: 50px;
+    height: 50px;
     padding: 50px;
     grid-column-start: 1;
 }
 
 .cajas p{
     grid-column-start: 2;
-    font-family: 'Anton', sans-serif;
 }
 .cajas .nombre{
     grid-column-start: 2;

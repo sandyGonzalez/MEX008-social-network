@@ -17,14 +17,19 @@ let userinfo = {
       <input type="text">
     </div>
     <div class="user-info-footer">
-        <i class="fas fa-arrow-left"></i>
-        <a href = "./#/welcome"> Listo</a>
+        <button id="skip-step">Saltar</button>
+        <button id="ready">Listo</button>
     </div>
   </main>
     `
     return view
 }
-, after_render: async () => {}
+, after_render: async () => {
+  let skipStep = document.getElementById("skip-step");
+  let ready = document.getElementById("ready");
+  skipStep.addEventListener("click",()=>location.hash= "#/welcome");
+  ready.addEventListener("click",()=>location.hash= "#/welcome");
+}
 }
 export default userinfo;
 
