@@ -1,28 +1,27 @@
 window.firebaseFunction = {
     register: () => {
         // console.log("diste un click");
-        let userName = document.getElementById("username").value
+        let userName = document.getElementById("username").value;
         let email = document.getElementById("signup-email").value;
         let password = document.getElementById("create-password").value;
-        let confirmPassword = document.getElementById("confirm-password").value
-        if(userName === ''){
+        let confirmPassword = document.getElementById("confirm-password").value;
+        if (userName === '') {
             alert('Te falta escribir tu nombre');
             return;
         }
-        if(email.length < 4){
+        if (email.length < 4) {
             alert('Tu correo no es valido');
             return;
         }
-        if(password.length < 6){
+        if (password.length < 6) {
             alert('Tu contraseña debe tener 6 caracteres por lo menos');
             return;
         }
-        if(password !== confirmPassword){
+        if (password !== confirmPassword) {
             alert('la contraseña no es la misma');
             return;
         }
         //PENDIENTE TERMINOS Y CONDICIONES
-        
         firebase.auth().createUserWithEmailAndPassword(email, password)
             .then(() => {
                 window.firebaseFunction.verify();
@@ -39,14 +38,21 @@ window.firebaseFunction = {
     functionLogin: () => {
         let logInEmail = document.getElementById("login-email").value;
         let logInPassword = document.getElementById("login-password").value;
+        if (logInEmail === "") {
+            alert("Escribe tu correo electrónico");
+            return;
+        }
+        if (logInPassword === "") {
+            alert("Escribe tu contraseña");
+            return;
+        }
         firebase.auth().signInWithEmailAndPassword(logInEmail, logInPassword)
-        .then(() =>{
-            location.hash= "#/timeline"
-
-
-        })
+            .then(() =>{
+                location.hash = "#/timeline";
+            })
             .catch(function (error) {
                 // Handle Errors here.
+                alert("Usuario y/o contraseña incorrectos")
                 let errorCode = error.code;
                 let errorMessage = error.message;
                 // ...
@@ -55,12 +61,14 @@ window.firebaseFunction = {
             });
     },
     observe: () => {
-        firebase.auth().onAuthStateChanged(function(user) {
+        firebase.auth().onAuthStateChanged(function (user) {
             if (user) {
                 window.firebaseFunction.write(user);
                 console.log("existe usuario activo");
+                console.log(user);
               // User is signed in.
                 let displayName = user.displayName;
+                console.log(displayName);
                 let email = user.email;
                 let emailVerified = user.emailVerified;
                 console.log(user.emailVerified);
@@ -87,7 +95,7 @@ window.firebaseFunction = {
     verify: () => {
         let user = firebase.auth().currentUser;
         user.sendEmailVerification()
-            .then(function() {
+            .then(function () {
                 alert("Revisa tu correo, debes verificar tu cuenta");
                 console.log("enviando correo...");
           // Email sent.

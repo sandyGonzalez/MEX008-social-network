@@ -27,7 +27,7 @@ render : async () => {
   const googleLogin = document.getElementById("google-login");
   const facebookLogin = document.getElementById("facebook-login");
   logInBtn.addEventListener("click", () => window.firebaseFunction.functionLogin());
-  () => window.firebaseFunction.observe();
+  window.firebaseFunction.observe();
   googleLogin.addEventListener("click", () => window.firebaseFunction.loginGoogle());
   facebookLogin.addEventListener("click", () => window.firebaseFunction.loginFacebook());
 }

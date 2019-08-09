@@ -18,7 +18,7 @@ render : async () => {
       </div>
       <div class="modal-options">
         <p>O</p>
-        <a href="#/userform">Correo electrónico</a>
+        <button id="email-sign-in">Correo electrónico</button>
       </div>
       </div>
       <div class="sign-in-footer">
@@ -61,6 +61,9 @@ render : async () => {
   `
   return view
 }
-, after_render: async () => {}
+, after_render: async () => {
+  let emailSignIn = document.getElementById("email-sign-in");
+  emailSignIn.addEventListener("click",()=>location.hash= "#/userform");
+}
 }
 export default signIn;

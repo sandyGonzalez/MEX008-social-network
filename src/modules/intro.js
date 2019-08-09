@@ -9,32 +9,20 @@ let intro = {
           <p>¿Estás list@ para formar parte de la red social más glotona de la CDMX?</p>
         </div>
         <div class="btns">
-          <a href = "./#/signin">Crear Cuenta</a>
+          <button id ="sign-in-btn">Crear Cuenta</button>
           <p>O</p>
-          <a href = "./#/login">Iniciar Sesión</a>
+          <button id="log-in-btn">Iniciar Sesión</button>
         </div>
       </main>
       `
       return view
   },
-  after_render : async () => {}
+  after_render : async () => {
+    let singInBtn = document.getElementById("sign-in-btn");
+    let logInBtn = document.getElementById("log-in-btn");
+    singInBtn.addEventListener("click",()=>location.hash= "#/signin");
+    logInBtn.addEventListener("click",()=>location.hash= "#/login");
+  }
 }
 
 export default intro;
-// let intro = `
-// <main class="intro">
-//         <div class="logo">
-//           <img src="./Imagenes/foodlova.png" alt="logo">
-//         </div>
-//         <div class="intro-text">
-//           <p>¿Estás list@ para formar parte de la red social más glotona de la CDMX?</p>
-//         </div>
-//         <div class="btns">
-//           <button>Crear una cuenta</button>
-//           <p>O</p>
-//           <button>Inicia sesión</button>
-//         </div>
-//       </main>
-// `;
-
-// module.exports = intro;
