@@ -66,7 +66,7 @@ window.firebaseFunction = {
     observe: () => {
         firebase.auth().onAuthStateChanged(function (user) {
             if (user) {
-                window.firebaseFunction.write(user);
+                // window.firebaseFunction.write(user);
                 console.log("existe usuario activo");
                 console.log(user);
               // User is signed in.
@@ -89,14 +89,15 @@ window.firebaseFunction = {
 
         return console.log("Observador activo")
     },
-    write: (user) => {
-            // let user1 = user; 
-            let content = document.getElementById("content");
-        if (user.emailVerified) {
-            /* content.innerHTML = "Login exitoso"; */
-        }
-        return alert("correo verificado")
-    },
+
+    // write: (user) => {
+    //         // let user1 = user;
+    //         // let content = document.getElementById("content");
+    //     if (user.emailVerified) {
+    //         // content.innerHTML = "Login exitoso";
+    //     }
+    // },
+
         // observe();
     verify: () => {
         let user = firebase.auth().currentUser;
@@ -114,7 +115,8 @@ window.firebaseFunction = {
     },
     loginGoogle: () => {
             const provider = new firebase.auth.GoogleAuthProvider();
-        firebase.auth().signInWithPopup(provider).then(function (user) {
+        firebase.auth().signInWithPopup(provider)
+        .then(function (user) {
             console.log(user);
             // This gives you a Google Access Token. You can use it to access the Google API.
             const token = result.credential.accessToken;
@@ -122,7 +124,6 @@ window.firebaseFunction = {
         // The signed-in user info.
             const userId = result.user;
             console.log(userId);
-            
         }).catch(function (error) {
             // Handle Errors here.
         const errorCode = error.code;
