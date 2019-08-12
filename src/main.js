@@ -104,6 +104,7 @@ window.addEventListener('load', router); // The event occurs when an object has 
 //     }
 //   });
 // };
+
 // observe();
 
 // const write = (user) => {
