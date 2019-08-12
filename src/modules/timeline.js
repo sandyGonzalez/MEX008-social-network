@@ -7,7 +7,7 @@ let timeline = {
             <ul class="menu-izq">
                 <li><img class="imagen" src="./Imagenes/menu.png" alt="imagen" /></li>
                 <li><img class="imagen" src="./Imagenes/fondel.png" alt="folder" /></li>
-                <li><img class="imagen" src="./Imagenes/ubicacón.png" alt="descripcion" /></li>
+                <li><img id ="location-btn" class="imagen" src="./Imagenes/ubicacón.png" alt="descripcion" /></li>
             </ul>
             <ul class="menu-der">
                 <li><img class="imagen"  src="./Imagenes/mensaje.png" alt="descripcion" /></li>
@@ -33,10 +33,10 @@ let timeline = {
    }
    , after_render: async () => {
     // const signUp = document.getElementById("confirm-signup");
- 
-   
     // signUp.addEventListener("click", () => window.firebaseFunction.register());
     //  window.firebaseFunction.observe();
+    let locationBtn = document.getElementById("location-btn");
+    locationBtn.addEventListener("click",()=>location.hash= "#/location");
    }
  }
  export default timeline;
