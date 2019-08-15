@@ -7,11 +7,10 @@
 const signUp = document.getElementById("confirm-signup");
 
 const logOffBtn = document.getElementById("log-off");
+
 "use strict";
-
 // import Navbar from './modules/navbar.js'
-
-import intro     from './modules/intro.js';
+import intro from './modules/intro.js';
 import login from './modules/login.js';
 import signin from './modules/signIn.js';
 import userform from './modules/userForm.js';
@@ -19,15 +18,14 @@ import userinfo from './modules/userInfo.js';
 import welcome from './modules/welcome.js';
 import timeline from './modules/timeline.js';
 import location from './modules/location.js';
-
 import Error404 from './modules/error.js';
-
 import Utils from './modules/utils.js';
 
-// List of supported routes. 
+// List of supported routes.
 // Any url other than these routes will throw a 404 error
 const routes = {
     "/": intro,
+    "/intro": intro,
     '/login' : login,
     '/signin': signin,
     '/userform': userform,

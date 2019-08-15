@@ -9,8 +9,8 @@ render : async () => {
     <div class="sign-in-options">
       <h3>Crear cuenta</h3>
       <div class="modal-imgs">
-          <img class="fb-logo" src="./Imagenes/logo_fb.png" alt="logo fb">
-          <img class="google-logo" src="./Imagenes/logo_google.png" alt="logo google">
+          <img  id="facebook-login" class="fb-logo" src="./Imagenes/logo_fb.png" alt="logo fb">
+          <img id="google-login" class="google-logo" src="./Imagenes/logo_google.png" alt="logo google">
       <br>
       </div>
       <div class="modal-options">
@@ -29,7 +29,12 @@ render : async () => {
 }
 , after_render: async () => {
   let emailSignIn = document.getElementById("email-sign-in");
+  const googleLogin = document.getElementById("google-login");
+  const facebookLogin = document.getElementById("facebook-login");
   emailSignIn.addEventListener("click",()=>location.hash= "#/userform");
+  window.firebaseFunction.observe();
+  googleLogin.addEventListener("click", () => window.firebaseFunction.loginGoogle());
+  facebookLogin.addEventListener("click", () => window.firebaseFunction.loginFacebook());
 }
 }
 export default signIn;
